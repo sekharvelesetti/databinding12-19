@@ -1,37 +1,49 @@
 <!-- <div *ngIf="sekhar" class="name">{{sekhar.name}}</div> -->
 
 
-
 <div class="container">
   <div class="row">
-    <div class="col-md-4 form-group">
+    <div class="col-md-3 form-group">
       <label>product</label><input class="form-control" type="text" [(ngModel)]="nam">
     </div>
 
-    <div class="col-md-4 form-group">
+    <div class="col-md-3 form-group">
       <label>price</label><input class="form-control" type="number" [(ngModel)]="price">
     </div>
 
-    <div class="col-md-4 form-group">
-      <label>Count</label><input class="form-control" type="number" [(ngModel)]="count" ><br> <button class="btn btn-primary" (click)="myapp()" >button</button>
+    <div class="col-md-3 form-group">
+      <label>Count</label><input class="form-control" type="number" [(ngModel)]="count" >
+    </div>
+
+    <div class="col-md-3 form-group">
+      <label>price</label><input class="form-control" type="file" [(ngModel)]="file"><br><button class="btn btn-primary" (click)="myapp()" >button</button>
     </div>
   </div>
  
 
 </div>
      
-<table class="table table-dark">
+<table class="table table-striped table-dark">
   <tr>
+    <th>S.no</th>
     <th>PRODUCT</th>
     <th>PRICE</th>
+    <th>FILE</th>
     <th>quantity</th>
     <th>total</th>
   </tr>
-  <tr *ngFor="let sekhar of sekhars">
+  <tr *ngFor="let sekhar of sekhars | filter:nam  let i=index">
+    <td>{{i+1}}</td>
     <td>{{sekhar.name}}</td>
     <td>{{sekhar.price}}</td>
+    <td>{{file}}</td>
     <td>{{sekhar.count}}</td>
-    <td>Rs{{sekhar.price*sekhar.count}}</td>
-    <td><button (click)="remove()">X</button></td>
+    <td>Rs{{sekhar.price*sekhar.count}}</td> 
+    <td><button class="btn btn-danger" (click)="delete()" routerLink='/'>Delete</button></td>
+    <td><i class="far fa-trash-alt"></i><button  class="btn btn-info" (click)="update()"routerLink='/home' >deatils</button></td>
   </tr>
+
 </table>
+
+<router-outlet></router-outlet>
+

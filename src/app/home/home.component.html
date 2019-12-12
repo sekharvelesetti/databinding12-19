@@ -1,1 +1,6 @@
-<p>home works!</p>
+<h4>age details</h4>
+<ul *ngFor="let person of people">
+  <li *ngIf="person.age > 31"> 
+  {{ person.name }} ({{ person.age }})
+  </li>
+</ul>
