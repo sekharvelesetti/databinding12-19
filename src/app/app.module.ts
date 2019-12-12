@@ -8,6 +8,9 @@ import {FormsModule}    from '@angular/forms'
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { MainNavComponent } from './main-nav/main-nav.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { SekharDirective } from './sekhar.directive';
+import { DirectivesComponent } from './directives/directives.component';
+import { HttpClientModule } from '@angular/common/http'
 
 
 
@@ -16,6 +19,8 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     AppComponent,
     HomeComponent,
     MainNavComponent,
+    SekharDirective,
+    DirectivesComponent,
     
   ],
   imports: [
@@ -23,7 +28,9 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    HttpClientModule
+   
     
   ],
   providers: [],

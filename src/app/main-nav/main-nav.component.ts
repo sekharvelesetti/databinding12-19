@@ -28,9 +28,9 @@ export class MainNavComponent implements OnInit {
       "country": 'UK'
     },
     {
-      "name": "Cook  Tyson",
-      "age": 32,
-      "country": 'USA'
+      "name": "sekhar  valesertti",
+      "age": 23,
+      "country": 'india'
     }
   ];
 
